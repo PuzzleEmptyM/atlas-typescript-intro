@@ -1,6 +1,12 @@
 import React from 'react';
 
-const SongTitle = ({ title, artist }) => {
+// Define the type for the props
+interface SongTitleProps {
+  title: string;
+  artist: string;
+}
+
+const SongTitle: React.FC<SongTitleProps> = ({ title, artist }) => {
   return (
     <div className="text-center">
       <h2 className="text-lg font-bold">{title}</h2>
