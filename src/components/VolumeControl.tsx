@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
-import volume from '../assets/medium-volume.png';
+import volumeIcon from '../assets/medium-volume.png';
+import muteIcon from '../assets/mute.png';
 
 const VolumeControl = () => {
   const [value, setValue] = useState(50);
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
-    e.target.style.background = `linear-gradient(to right, gray ${e.target.value}%, white ${e.target.value}%)`;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(e.target.value);
+    setValue(newValue);
+    e.target.style.background = `linear-gradient(to right, gray ${newValue}%, white ${newValue}%)`;
   };
 
   return (
     <div className="flex items-center space-x-2 mt-6">
-      <img src={volume} alt="Volume" className="w-5 h-5" />
+      {/* Display mute icon when volume is 0, otherwise display the volume icon */}
+      <img 
+        src={value === 0 ? muteIcon : volumeIcon} 
+        alt={value === 0 ? "Mute" : "Volume"} 
+        className="w-5 h-5" 
+      />
       <input
         id="small-range"
         type="range"
