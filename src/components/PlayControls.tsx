@@ -17,20 +17,24 @@ const PlayControls: React.FC<PlayControlsProps> = ({ currentSongIndex, totalSong
   const [isPlaying, setIsPlaying] = useState(false);
   const [isShuffling, setIsShuffling] = useState(false);
 
-  // Toggle between 1x, 2x, 3x speed
-  const handleSpeedChange = () => {
-    setSpeed(prevSpeed => (prevSpeed === 3 ? 1 : prevSpeed + 1));
-  };
 
-  // Toggle play and pause
+  const handleSpeedChange = () => {
+    const newSpeed = speed === 3 ? 1 : speed + 1;
+    setSpeed(newSpeed);
+    console.log("Speed changed:", newSpeed);
+  };
+  
+
+
   const handlePlayPause = () => {
     setIsPlaying(prevIsPlaying => !prevIsPlaying);
+    console.log("Playing:", !isPlaying);
   };
 
-  // Toggle shuffle mode
+
   const handleShuffleToggle = () => {
     setIsShuffling(prevIsShuffling => !prevIsShuffling);
-    console.log("Shuffle Toggled:", !isShuffling); // Check if it toggles
+    console.log("Shuffle Toggled:", !isShuffling);
   };
   
 
