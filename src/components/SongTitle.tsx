@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Define the type for the props
 interface SongTitleProps {
   title: string;
   artist: string;

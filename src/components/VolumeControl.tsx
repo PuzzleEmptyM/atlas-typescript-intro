@@ -13,7 +13,6 @@ const VolumeControl = () => {
 
   return (
     <div className="flex items-center space-x-2 mt-6">
-      {/* Display mute icon when volume is 0, otherwise display the volume icon */}
       <img 
         src={value === 0 ? muteIcon : volumeIcon} 
         alt={value === 0 ? "Mute" : "Volume"} 

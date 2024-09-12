@@ -2,7 +2,7 @@ import React from 'react';
 import img from '../assets/placeholder.svg';
 
 interface CoverArtProps {
-  src?: string;  // src is optional because you're using a placeholder image
+  src?: string;
   alt: string;
 }
 
